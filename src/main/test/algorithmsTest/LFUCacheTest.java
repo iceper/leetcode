@@ -1,15 +1,13 @@
 package algorithmsTest;
 
 import algorithms.LFUCache;
-import algorithms.LFUCacheLeetcode;
 import org.junit.Assert;
 import org.junit.Test;
-import sun.misc.LRUCache;
 
 /**
- * 占位符:类描述.
+ * LFUCache算法测试类.
  *
- * @author fu tao
+ * @author iceper
  * @since 2016/12/14 16:36
  */
 public class LFUCacheTest {
