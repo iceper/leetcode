@@ -24,6 +24,10 @@ public class LRUCache {
      */
     private Node tail;
 
+    public Node getHead() {
+        return head;
+    }
+
     public LRUCache(int capacity) {
         this.capacity = capacity;
         cache = new HashMap<Integer, Node>();
@@ -32,6 +36,7 @@ public class LRUCache {
     public int get(int key) {
         Node node = cache.get(key);
         if (node != null) {
+            toHead(node);
             return node.value.intValue();
         }else {
             return -1;
@@ -54,6 +59,19 @@ public class LRUCache {
             currentSize ++ ;
         }
         return;
+    }
+
+    /**
+     * 打印链表中某一个节点到其尾部的所有节点信息
+     * @param node 开始节点
+     * @return
+     */
+    public void printToTail(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println("key = " + node.key + " , value = " + node.value + "\t");
+        printToTail(node.next);
     }
 
     /**
@@ -96,6 +114,7 @@ public class LRUCache {
             node.pre.next = null;
             node.pre = null;
             node.next = head;
+            head.pre = node;
             head = node;
             return;
         }
@@ -104,6 +123,7 @@ public class LRUCache {
             node.next.pre = node.pre;
             node.pre = null;
             node.next = head;
+            head.pre = node;
             head = node;
             return;
         }
