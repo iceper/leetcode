@@ -1,8 +1,9 @@
 package algorithmsTest;
 
-import algorithms.LRUCache;
 import org.junit.Assert;
 import org.junit.Test;
+
+import algorithms.LRUCache;
 
 /**
  * LRUCache算法测试类.

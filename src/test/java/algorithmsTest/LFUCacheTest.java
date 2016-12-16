@@ -1,8 +1,9 @@
 package algorithmsTest;
 
-import algorithms.LFUCache;
 import org.junit.Assert;
 import org.junit.Test;
+
+import algorithms.LFUCache;
 
 /**
  * LFUCache算法测试类.
@@ -13,7 +14,7 @@ import org.junit.Test;
 public class LFUCacheTest {
 
     @Test
-    public void lfucache() {
+    public void lfuCache() {
 
         LFUCache lfuCache = new LFUCache(0);
         lfuCache.set(0 ,0);
@@ -28,8 +29,8 @@ public class LFUCacheTest {
         Assert.assertTrue(lfuCacheOtherUser.get(2) == -1);
         Assert.assertTrue(lfuCacheOtherUser.get(3) == 3);
         lfuCacheOtherUser.set(4, 4);
-        Assert.assertTrue(lfuCacheOtherUser.get(1) == 1);
-        Assert.assertTrue(lfuCacheOtherUser.get(3) == -1);
+        Assert.assertTrue(lfuCacheOtherUser.get(1) == -1);
+        Assert.assertTrue(lfuCacheOtherUser.get(3) == 3);
         Assert.assertTrue(lfuCacheOtherUser.get(4) == 4);
     }
 }
